@@ -17,11 +17,15 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
+        $request->user()->tokens()->delete();
+
         if (!Auth::attempt($credenciales)) {
             return response()->json(["message" => "Credenciales Incorrectas"], 401); 
         }
 
         $usuario = $request->user();
+        
+        // $request->user()->tokens()->delete();
 
         $token = $usuario->createToken("Token Auth")->plainTextToken;
 
