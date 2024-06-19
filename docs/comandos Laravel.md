@@ -42,3 +42,12 @@ php artisan make:model Role -m
 ```
 php artisn make:migration create_role_user_table
 ```
+
+## Manejo de SEEDERS
+
+````
+php artisan make:seeder UserSeeder
+```
+````
+php artisan migrate --seed
+```
