@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\UsuarioController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -21,4 +23,18 @@ Route::prefix('v1/auth')->group(function(){
     });
 
 });
+
+// CRUD API REST
+
+Route::middleware(['auth:sanctum'])->group(function(){
+
+    Route::apiResource("usuario", UsuarioController::class);
+    Route::apiResource("persona", PersonaController::class);
+    
+});
+
+
+Route::get("/no-permitido", function(){
+    return response()->json(["mensaje" => "No esta permitido ver esta pagina"]);
+})->name("login");
 

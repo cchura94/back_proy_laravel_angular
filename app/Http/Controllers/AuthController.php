@@ -17,7 +17,7 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-        $request->user()->tokens()->delete();
+        // $request->user()->tokens()->delete();
 
         if (!Auth::attempt($credenciales)) {
             return response()->json(["message" => "Credenciales Incorrectas"], 401); 

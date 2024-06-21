@@ -1,0 +1,19 @@
+GET http://127.0.0.1:8000/api/persona
+Authorization: Bearer 1|aH9cx5HmTZwdReMIuWcXjwQZHZozbNyMUmTneEXq6dda6981
+
+### guardar
+POST http://127.0.0.1:8000/api/persona
+Authorization: Bearer 1|aH9cx5HmTZwdReMIuWcXjwQZHZozbNyMUmTneEXq6dda6981
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nombres": "Rodrigo",
+    "apellidos": "Prueba",
+    "ci_nit": "31654",
+    "direccion": "Av 123 z. ABC"
+}
+
+### mostrar
+GET http://127.0.0.1:8000/api/persona/1
+Authorization: Bearer 1|aH9cx5HmTZwdReMIuWcXjwQZHZozbNyMUmTneEXq6dda6981
