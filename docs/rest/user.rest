@@ -1,6 +1,6 @@
 ###  Lista Usuarios
 GET http://127.0.0.1:8000/api/usuario?page=2
-Authorization: Bearer 3|eeN5eVTNBrobZP0u2GkciteeWABqfFcEewwsKyN3e0ff9c6d
+Authorization: Bearer 36|ZhkFuzJykV8ChU1wvFONFVkLRJJz3NqBy8DW5rar30ed950c
 
 ###  guardar usuario
 POST http://127.0.0.1:8000/api/usuario

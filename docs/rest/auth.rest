@@ -23,7 +23,7 @@ Accept: application/json
 ### 
 GET http://127.0.0.1:8000/api/v1/auth/profile
 Accept: application/json
-Authorization: Bearer 2|RoXT4nJYzLcZ7L3qH2R2vVFX8RgvQQWH7kMRQ4Zj72ac2b5c
+Authorization: Bearer 25|mSXDgfEVmiLRShi3WKEomIGJVPpCHb0hOoWuKEN3fb714fe6
 
 
 ### 

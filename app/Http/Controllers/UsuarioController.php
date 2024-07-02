@@ -14,7 +14,7 @@ class UsuarioController extends Controller
     {
         $usuarios = User::orderBy('id', 'desc')
                             ->select('id', 'name', 'email')
-                            ->paginate(2);
+                            ->paginate(10);
 
         return response()->json($usuarios, 200);
     }
