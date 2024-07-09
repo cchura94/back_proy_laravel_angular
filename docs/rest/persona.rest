@@ -1,9 +1,9 @@
 GET http://127.0.0.1:8000/api/persona
-Authorization: Bearer 1|aH9cx5HmTZwdReMIuWcXjwQZHZozbNyMUmTneEXq6dda6981
+Authorization: Bearer 44|rYwHcYKifJzYQi0iJR3FNLW7pnNwBORbwTATYSR4e16263c2
 
 ### guardar
 POST http://127.0.0.1:8000/api/persona
-Authorization: Bearer 1|aH9cx5HmTZwdReMIuWcXjwQZHZozbNyMUmTneEXq6dda6981
+Authorization: Bearer 44|rYwHcYKifJzYQi0iJR3FNLW7pnNwBORbwTATYSR4e16263c2
 Content-Type: application/json
 Accept: application/json
 
@@ -17,3 +17,23 @@ Accept: application/json
 ### mostrar
 GET http://127.0.0.1:8000/api/persona/1
 Authorization: Bearer 1|aH9cx5HmTZwdReMIuWcXjwQZHZozbNyMUmTneEXq6dda6981
+
+### MODIFICAR
+PUT http://127.0.0.1:8000/api/persona/1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 44|rYwHcYKifJzYQi0iJR3FNLW7pnNwBORbwTATYSR4e16263c2
+
+{
+    "nombres": "JUan Valdez MODIFICADO",
+    "apellidos": "Valdez",
+    "ci_nit": null,
+    "direccion": null,
+    "user_id": 2,
+
+}
+
+### eliminar
+DELETE http://127.0.0.1:8000/api/persona/2
+Accept: application/json
+Authorization: Bearer 44|rYwHcYKifJzYQi0iJR3FNLW7pnNwBORbwTATYSR4e16263c2

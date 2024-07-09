@@ -1,0 +1,18 @@
+GET http://127.0.0.1:8000/api/producto?limit=5&page=1&q=SILLA
+Authorization: Bearer 2|idkK44QDvqb4wYwA9QYlkhhTImR17EAUyOyjgYCP724da853
+
+
+### guardar
+POST http://127.0.0.1:8000/api/producto
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|idkK44QDvqb4wYwA9QYlkhhTImR17EAUyOyjgYCP724da853
+
+{
+    "nombre": "JUEGO DE SILLAs",
+    "precio": 280,
+    "stock": 6,
+    "estado": true,
+    "descripcion": "de Madera",
+    "categoria_id": 1
+}

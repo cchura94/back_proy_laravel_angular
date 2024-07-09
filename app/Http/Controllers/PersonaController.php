@@ -53,7 +53,15 @@ class PersonaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $per = Persona::findOrFail($id);
+        $per->nombres = $request->nombres;
+        $per->apellidos = $request->apellidos;
+        $per->ci_nit = $request->ci_nit;
+        $per->direccion = $request->direccion;
+        $per->user_id = $request->user_id;
+        $per->update();
+        
+        return response()->json(["mensaje" => "Persona Actualizada"]);
     }
 
     /**
@@ -61,6 +69,10 @@ class PersonaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $per = Persona::findOrFail($id);
+        $per->delete();
+
+        return response()->json(["mensaje" => "Persona Elimniada"]);
+
     }
 }
