@@ -8,10 +8,26 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "nombre": "ELECTRODOMESTOS"
+    "nombre": "ELECTRONICOS"
 }
 
 ### 
-GET http://127.0.0.1:8000/api/categoria/4
+GET http://127.0.0.1:8000/api/categoria/3
 Authorization: Bearer 1|JGEZFuKlk7Y99ZdPOPkqf9xe8CuiVlygD3pK5Ja16c1f7b74
 Accept: application/json
+
+### modificar
+PUT http://127.0.0.1:8000/api/categoria/2
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|WaComik1rMCwjL3XPXxL5SticpVvRDxrRbxV7lv17f9bd34c
+
+{
+    "nombre": "ROPA",
+    "detalle": "Ropa para damas"
+}
+
+### eliminar
+DELETE http://127.0.0.1:8000/api/categoria/4
+Accept: application/json
+Authorization: Bearer 3|WaComik1rMCwjL3XPXxL5SticpVvRDxrRbxV7lv17f9bd34c

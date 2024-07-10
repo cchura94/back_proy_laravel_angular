@@ -1,4 +1,4 @@
-GET http://127.0.0.1:8000/api/producto?limit=5&page=1&q=SILLA
+GET http://127.0.0.1:8000/api/producto?limit=5&page=2&q=
 Authorization: Bearer 2|idkK44QDvqb4wYwA9QYlkhhTImR17EAUyOyjgYCP724da853
 
 
@@ -9,10 +9,15 @@ Accept: application/json
 Authorization: Bearer 2|idkK44QDvqb4wYwA9QYlkhhTImR17EAUyOyjgYCP724da853
 
 {
-    "nombre": "JUEGO DE SILLAs",
-    "precio": 280,
-    "stock": 6,
+    "nombre": "CAMISA",
+    "precio": 299.98,
+    "stock": 12,
     "estado": true,
-    "descripcion": "de Madera",
-    "categoria_id": 1
+    "descripcion": "Camisa Talla Grande",
+    "categoria_id": 2
 }
+
+###
+
+GET http://127.0.0.1:8000/api/producto/4
+Authorization: Bearer 2|idkK44QDvqb4wYwA9QYlkhhTImR17EAUyOyjgYCP724da853

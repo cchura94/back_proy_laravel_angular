@@ -76,7 +76,9 @@ class ProductoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $producto = Producto::with('categoria')->findOrFail($id);
+
+        return response()->json($producto);
     }
 
     /**
@@ -84,7 +86,26 @@ class ProductoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            "nombre" => "required|max:200|min:3",
+            "precio" => "required",
+            "stock" => "required",
+            "estado" => "required",
+            "categoria_id" => "required"
+        ]);
+
+            $producto = Producto::with('categoria')->findOrFail($id);
+        
+            $producto->nombre = $request->nombre;
+            $producto->precio = $request->precio;
+            $producto->stock = $request->stock;
+            $producto->categoria_id = $request->categoria_id;
+            $producto->descripcion = $request->descripcion;
+            $producto->estado = $request->estado;
+            $producto->update();
+
+            return response()->json(["message" => "Producto actualizado"], 200);
+
     }
 
     /**
@@ -92,6 +113,25 @@ class ProductoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $producto = Producto::findOrFail($id);
+        $producto->delete();
+
+        return response()->json(["message" => "Producto eliminado"]);
+    }
+
+    public function actualizarImagen(Request $request, $id){
+        $producto = Producto::find($id);
+        if($file = $request->file('imagen')){
+            $direccion_imagen = "";
+            $direccion_imagen = time() . "-" . $file->getClientOriginalName();
+            $file->move("imagenes/", $direccion_imagen);
+
+            $direccion_imagen =  "imagenes/". $direccion_imagen;
+            $producto->imagen =  $direccion_imagen;
+            $producto->update(); 
+
+            return response()->json(["message" => "Imagen Actualizada"]);
+        }
+
     }
 }
