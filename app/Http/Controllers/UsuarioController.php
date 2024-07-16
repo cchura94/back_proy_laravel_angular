@@ -13,6 +13,8 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = User::orderBy('id', 'desc')
+                            // ->join('personas', 'personas.user_id', '=', 'users.id')
+                            ->with(['persona', 'roles', 'pedidos'])
                             ->select('id', 'name', 'email')
                             ->paginate(10);
 

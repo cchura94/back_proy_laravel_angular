@@ -1,14 +1,14 @@
 GET http://127.0.0.1:8000/api/categoria
-Authorization: Bearer 1|JGEZFuKlk7Y99ZdPOPkqf9xe8CuiVlygD3pK5Ja16c1f7b74
+Authorization: Bearer 47|gey02pGtSk23GRmYpywQhM7O1wPTk7WWB1kZUXNi72b40638
 
 ### guardar
 POST http://127.0.0.1:8000/api/categoria
-Authorization: Bearer 1|JGEZFuKlk7Y99ZdPOPkqf9xe8CuiVlygD3pK5Ja16c1f7b74
+Authorization: Bearer 47|gey02pGtSk23GRmYpywQhM7O1wPTk7WWB1kZUXNi72b40638
 Content-Type: application/json
 Accept: application/json
 
 {
-    "nombre": "ELECTRONICOS"
+    "nombre": "ROPA"
 }
 
 ### 
