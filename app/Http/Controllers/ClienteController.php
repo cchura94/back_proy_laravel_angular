@@ -15,6 +15,14 @@ class ClienteController extends Controller
         return response()->json(Cliente::get());
     }
 
+    public function indexSearch(Request $request)
+    {
+        $cliente = Cliente::where('nombre_completo', "like", "%".$request->q."%")
+                ->orWhere('ci', "like", "%".$request->q."%")
+                ->first();
+        return response()->json($cliente);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -22,13 +30,13 @@ class ClienteController extends Controller
     {
 
         $cliente = new Cliente();
-        $cliente->nombre_commpleto = $request->nombre_completo;
+        $cliente->nombre_completo = $request->nombre_completo;
         $cliente->telefono = $request->telefono;
         $cliente->direccion = $request->direccion;
         $cliente->ci = $request->ci;
         $cliente->save();
 
-        return response()->json(["message" => "Cliente registrado"]);
+        return response()->json($cliente);
 
         
     }

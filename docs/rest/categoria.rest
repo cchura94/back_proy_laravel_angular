@@ -3,12 +3,12 @@ Authorization: Bearer 47|gey02pGtSk23GRmYpywQhM7O1wPTk7WWB1kZUXNi72b40638
 
 ### guardar
 POST http://127.0.0.1:8000/api/categoria
-Authorization: Bearer 47|gey02pGtSk23GRmYpywQhM7O1wPTk7WWB1kZUXNi72b40638
+Authorization: Bearer 50|BeARVyYN3goJJ2TN9jutFZ2Woa1Uj7egLIYye39A00c71eb1
 Content-Type: application/json
 Accept: application/json
 
 {
-    "nombre": "ROPA"
+    "nombre": "ELECTRONICOS"
 }
 
 ### 

@@ -32,6 +32,7 @@ Route::prefix('v1/auth')->group(function(){
 
 Route::middleware(['auth:sanctum'])->group(function(){
 
+    Route::get("cliente/buscar", [ClienteController::class, "indexSearch"]);
     // subida de imagenes
     Route::post("producto/{id}/actualizar-imagen", [ProductoController::class, "actualizarImagen"]); 
 
