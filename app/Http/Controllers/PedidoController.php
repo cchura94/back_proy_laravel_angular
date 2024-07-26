@@ -6,15 +6,22 @@ use App\Models\Pedido;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PedidoController extends Controller
 {
+    public function generarReportePDF(){
+
+        $pedidos = Pedido::get();
+        $pdf = Pdf::loadView('pdf.lista_pedidos', ["pedidos" => $pedidos]);
+        return $pdf->download('lista_pedido.pdf');
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $pedidos = Pedido::paginate(10);
+        $pedidos = Pedido::with(['user', 'cliente', 'productos'])->orderBy('id', 'desc')->paginate(10);
 
         return response()->json($pedidos);
     }

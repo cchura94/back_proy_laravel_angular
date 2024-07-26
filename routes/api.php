@@ -30,6 +30,9 @@ Route::prefix('v1/auth')->group(function(){
 
 // CRUD API REST
 
+
+Route::get("/pedido/generar-pedido-pdf", [PedidoController::class, "generarReportePDF"]);
+
 Route::middleware(['auth:sanctum'])->group(function(){
 
     Route::get("cliente/buscar", [ClienteController::class, "indexSearch"]);
